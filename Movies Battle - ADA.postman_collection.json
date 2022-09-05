@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "4fc0e524-006e-400c-800a-1e9a2f1843fb",
+		"name": "Movies Battle - ADA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5796132"
+	},
+	"item": [
+		{
+			"name": "Autentication",
+			"item": [
+				{
+					"name": "getToken player1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "yuri",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"player1\",\r\n    \"password\":1234\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ada/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getToken player2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "yuri",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"player2\",\r\n    \"password\":4321\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ada/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getToken Admin",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "yuri",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ada/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ada/player?fullName=Yuri Lagos da Rocha&login=yuri&password=1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"player"
+							],
+							"query": [
+								{
+									"key": "fullName",
+									"value": "Yuri Lagos da Rocha"
+								},
+								{
+									"key": "login",
+									"value": "yuri"
+								},
+								{
+									"key": "password",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Data",
+			"item": [
+				{
+					"name": "get Create Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ada/init/ceate-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"init",
+								"ceate-data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rank",
+			"item": [
+				{
+					"name": "get Rank",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BattleGame Player1",
+			"item": [
+				{
+					"name": "START BATTLE player1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbGF5ZXIxIiwiZXhwIjoxNjYyMzI3MjYyfQ.o3zglb2iIpGU7XmfptCHZwKx5-IJaLcLNldKcazc0cs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ada/battle/fight",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"battle",
+								"fight"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChoseMovie player1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbGF5ZXIxIiwiZXhwIjoxNjYyMzI3MzI5fQ.nQKyES4M-AdEjuCfDwcnf1G2A2H8CR27F50nS9IskRs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ada/battle/choose/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"battle",
+								"choose",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BattleGame Player2",
+			"item": [
+				{
+					"name": "START BATTLE Player2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyZWJlY2EiLCJleHAiOjE2NjIzMTczMTh9.oPS7jYyvcPEiJFZhWx_KLrKZX2-aI9ycKrgWr19RSr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ada/battle/fight",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"battle",
+								"fight"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChoseMovie Player2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyZWJlY2EiLCJleHAiOjE2NjIzMTczMTh9.oPS7jYyvcPEiJFZhWx_KLrKZX2-aI9ycKrgWr19RSr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ada/battle/choose/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"battle",
+								"choose",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "CreateMovie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ada/movie/create/titanic",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"movie",
+								"create",
+								"titanic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMovie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ada/movie/find/rock",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ada",
+								"movie",
+								"find",
+								"rock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
